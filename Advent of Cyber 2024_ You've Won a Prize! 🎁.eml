@@ -1,0 +1,406 @@
+Delivered-To: smartmani9607@gmail.com
+Received: by 2002:a05:7022:622:b0:8e:df04:8849 with SMTP id 34csp14904821dlb;
+        Mon, 6 Jan 2025 07:47:22 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHRPUtvmIiaBa60NC6crMpsLDufg3nu4Z+Fe/OAYvMzQKIqfzSetnZK2ZteHuZHi89Ox38i
+X-Received: by 2002:a05:6214:246d:b0:6d8:871d:49f1 with SMTP id 6a1803df08f44-6dd233af072mr921974506d6.44.1736178441780;
+        Mon, 06 Jan 2025 07:47:21 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1736178441; cv=none;
+        d=google.com; s=arc-20240605;
+        b=dxDMixazbTMsI0dsMKvux7s8UIHVENDTlReJKOtsNm43S9GwpkBG8t7mxAHHsCGg2Z
+         +EpwnHhNUZOBUNFUtxIYob+kbuXWBbTBp7rmJFJgm4fwZURL/rBs4n/L6vUosHp4cRs8
+         o+l+/HBbBu9CTVUnjdpqNTX/bcP2nPyS3v192FMAKRzQ3rAfKGgvOaC6UPDohz1LzD4B
+         5t22CkEnWex1oDsMLgniJQtMRyMPnkW+gYfvKhmIB/9jmzfEzI4ZmR9U4psUhIkweU/E
+         P1hrifjsFSKyKCLb7m6hzHO1fNElxnYo6I6SWoClCTfkBXprf/DdfkIwii1+2Ug5SvTW
+         rgmw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:list-unsubscribe-post:list-unsubscribe:to:from:subject
+         :mime-version:date:dkim-signature:dkim-signature;
+        bh=233pp6eLd9VAvtk3uVheNaRLJF99eVNeb/fZSztxhTY=;
+        fh=n69zeXgMTSyPi3ulf1aUBfoGEB91BZAzA4sqrUYABsI=;
+        b=UamwbpjNu9P2IZKpgr2kgw80xT4DlSVqsLA0kyD0QPU6Q6jZTX2fUpm6+yc/Z+Kzlo
+         JGdVvwHyH05/NIMs2Uk07/8rE3DsfM/sySGWa6U/SQrbyaRLEBwkdZutikOMwiirzYMM
+         jToQHxH+IV/r6l1M+KSBn7hADmnIYWs5tsPYZLZaXRs20XsCa9VMQdU3afj51/eVVEH0
+         flVj1K3zaejim4sVKA5VLNJJD/jKEGE9jwUc+dYkMsb8RmGX7diMasGId0zB8/p1dp+Y
+         H/pHUjpRSfHt5kb0+Qa52ikf3zZEXUi3ij8elF0zp2kMtexhky+Zc7zi/MwXpH2i+BEe
+         5XtQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp header.b=du+2RLQA;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=gLlXDipa;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com designates 159.112.241.136 as permitted sender) smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tryhackme.com
+Return-Path: <postmaster@cio56239.tryhackme.com>
+Received: from m241-136.mailgun.net (m241-136.mailgun.net. [159.112.241.136])
+        by mx.google.com with UTF8SMTPS id 6a1803df08f44-6dd18370e84si422709756d6.562.2025.01.06.07.47.21
+        for <smartmani9607@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Jan 2025 07:47:21 -0800 (PST)
+Received-SPF: pass (google.com: domain of postmaster@cio56239.tryhackme.com designates 159.112.241.136 as permitted sender) client-ip=159.112.241.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cio56239.tryhackme.com header.s=smtp header.b=du+2RLQA;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=gLlXDipa;
+       spf=pass (google.com: domain of postmaster@cio56239.tryhackme.com designates 159.112.241.136 as permitted sender) smtp.mailfrom=postmaster@cio56239.tryhackme.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tryhackme.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=cio56239.tryhackme.com; q=dns/txt; s=smtp; t=1736178441; x=1736185641;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=233pp6eLd9VAvtk3uVheNaRLJF99eVNeb/fZSztxhTY=;
+ b=du+2RLQAXs08KY4vpEAXz+GchcFey4IsQMxnX57fq86UUm9K/b2C/PsRaBCsdehExyBZc4RWSPZ8Ms0Q2H/Wu3HbnnIzTJ7nAzV/w1W/27XKfDRElyCtNKxEebIlUEEp9h4eAvrpwwWYSV+ReN+PqnSuxLp/s9pDu92CeRUwwaY=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1736178441; x=1736185641;
+ h=Message-Id: List-Unsubscribe-Post: List-Unsubscribe: To: To: From: From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id: Sender;
+ bh=233pp6eLd9VAvtk3uVheNaRLJF99eVNeb/fZSztxhTY=;
+ b=gLlXDipaQXAN2t99HO2YeqXXqVbTSz2vI++yQ3Tus6q+BoABqSbruukeP87dACLlj/mZyBNdLkhWm6DgiYaOC0gZskIfw+lffyWRx4JKYIklv3t4NAtNfOXJWgcNaqxhj+azX3vMZPfWe2mVhkPHwDpI6b3Sf/sf6+e5vL6JND4=
+X-Feedback-Id: postmaster@cio56239.tryhackme.com::5eb3f9f45e348a34cf90b8e5:mailgun
+X-Mailgun-Sending-Ip: 159.112.241.136
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyIzMmYwNiIsInNtYXJ0bWFuaTk2MDdAZ21haWwuY29tIiwiMjg2ZDVhIl0=
+Received: by 2e7a2cb7da35 with HTTP id 677bfb099080104debcc53c7; Mon, 06 Jan 2025
+ 15:47:21 GMT
+Date: Mon, 06 Jan 2025 15:47:21 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="6800463ca341f566c1693dc33cf96c777801e129d0b79993559c669a54cd"
+Subject: =?UTF-8?q?Advent_of_Cyber_2024:_You've_Won_a_Prize!_=F0=9F=8E=81?=
+From: TryHackMe Prizes <prizes@tryhackme.com>
+To: smartmani9607@gmail.com
+X-Mailgun-Track-Clicks: false
+X-Mailgun-Track-Opens: false
+X-Mailgun-Dkim: true
+X-Mailgun-Native-Send: true
+X-Mailer: Customer.io (dgTK1QUDAKngT6jgTwGUPEyZiYwcGgK1NLazw3w=;
+ +https://whatis.customeriomail.com)
+X-Report-Abuse-To: badactor@customer.io
+List-Unsubscribe: <mailto:32.MRTVISZRKFKUIQKLNZTVINTKM5KHOR2VKBCXSWTJLF3WGR3HJMYU4TDBPJ3TG5Z5@unsubscribe2.customer.io>,
+ <https://e.customeriomail.com/unsubscribe/dgTK1QUDAKngT6jgTwGUPEyZiYwcGgK1NLazw3w=>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"email_id": "dgTK1QUDAKngT6jgTwGUPEyZiYwcGgK1NLazw3w="}
+Message-Id: <20250106154721.ef1f3eb9d3bcf8b6@cio56239.tryhackme.com>
+
+--6800463ca341f566c1693dc33cf96c777801e129d0b79993559c669a54cd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+Congratulations!
+
+You have won:
+
+Clutch Pro USB C for Android and iPhone 15 plus
+
+In the next couple of days, you'll receive an email from Goody (our prize p=
+rovider) to arrange shipping of your prize. In the meantime, you may wish t=
+o check out the prize terms & conditions below!
+
+Terms & Conditions ( https://help.tryhackme.com/en/articles/8537472-advent-=
+of-cyber-2024-terms-and-conditions )
+Facebook ( https://www.facebook.com/Try-Hack-Me-101040432182368 )Twitter ( =
+https://twitter.com/RealTryHackMe )Instagram ( https://www.instagram.com/re=
+altryhackme/ )
+LinkedIn ( https://www.linkedin.com/company/tryhackme/ )Pinterest ( https:/=
+/www.pinterest.co.uk/RealTryHackMe/ )TikTok ( https://www.tiktok.com/@tryha=
+ckmeofficial )
+Terms ( https://tryhackme.com/r/legal/terms-of-use ) | Unsubscribe ( http:/=
+/track.customer.io/unsubscribe/dgTK1QUDAKngT6jgTwGUPEyZiYwcGgK1NLazw3w=3D )
+
+Copyright =C2=A9 TryHackMe. All rights reserved.
+--6800463ca341f566c1693dc33cf96c777801e129d0b79993559c669a54cd
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><me=
+ta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"/><!=
+--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerI=
+nch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{c=
+olor:inherit!important;text-decoration:inherit!important}#MessageViewBody a=
+{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.de=
+sktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.im=
+age_block img+div{display:none}sub,sup{font-size:75%;line-height:0} @media =
+(max-width:700px){.social_block.desktop_hide .social-table{display:inline-b=
+lock!important}.mobile_hide{display:none}.row-content{width:100%!important}=
+=2Estack .column{width:100%;display:blo=
+ck}.mobile_hide{min-height:0;max-heigh=
+t:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide tab=
+le{display:table!important;max-height:none!important}.row-2 .column-1 .bloc=
+k-1.text_block td.pad,.row-2 .column-1 .block-2.text_block td.pad,.row-2 .c=
+olumn-1 .block-3.text_block td.pad,.row-3 .column-1 .block-1.text_block td.=
+pad{padding:10px 25px!important}}
+</style><!--[if mso ]><style>sup, sub { font-size: 100% !important; } sup {=
+ mso-text-raise:10% } sub { mso-text-raise:-10% }</style> <![endif]--></hea=
+d><body class=3D"body" style=3D"background-color:#f5f5f5;margin:0;padding:0=
+;-webkit-text-size-adjust:none;text-size-adjust:none"><div style=3D"display=
+: none; max-height: 0px; overflow: hidden; mso-hide:all;">Congratulations -=
+ you&#39;ve won a prize from our $100,000 prize draw.=E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=A0</div><ta=
+ble class=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table=
+-rspace:0;background-color:#f5f5f5"><tbody><tr><td><table class=3D"row row-=
+1" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace=
+:0;background-color:#eee"><tbody><tr><td><table class=3D"row-content stack"=
+ align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-col=
+or:#141c2b;color:#000;width:680px;margin:0 auto" width=3D"680"><tbody><tr><=
+td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;mso=
+-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;vertical=
+-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0"><tabl=
+e class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0"><tbody><tr><td class=3D"pad" style=3D"width:100%"><div clas=
+s=3D"alignment" align=3D"center" style=3D"line-height:10px"><div style=3D"m=
+ax-width:680px"><img src=3D"https://userimg-assets.customeriomail.com/image=
+s/client-env-92874/1735904402772_AoC%20Prize%20Winner%20Email%20Banner_1035=
+x379px_01JGNZE7H7NCXN9XR3ADPRDMNG.png" style=3D"display:block;height:auto;b=
+order:0;width:100%" width=3D"680" alt=3D"" title=3D"" height=3D"auto"/></di=
+v></div></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbo=
+dy></table><table class=3D"row row-2" align=3D"center" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;background-color:#eee"><tbody><tr><td=
+><table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;background-color:#141c2b;border-radius:0;color:#000;wi=
+dth:680px;margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column colum=
+n-1" width=3D"58.333333333333336%" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;v=
+ertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0=
+"><table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad" st=
+yle=3D"padding-bottom:5px;padding-left:10px;padding-right:10px;padding-top:=
+20px"><div style=3D"font-family:sans-serif"><div class=3D"" style=3D"font-f=
+amily:Arial,&#39;Helvetica Neue&#39;,Helvetica,sans-serif;font-size:12px;ms=
+o-line-height-alt:14.399999999999999px;color:#fff;line-height:1.2"><p style=
+=3D"margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999=
+999999999px"><span style=3D"word-break: break-word; color: #a3ea2a;"><span =
+style=3D"word-break: break-word; font-size: 26px;"><strong>Congratulations!=
+</strong></span></span></p></div></div></td></tr></tbody></table><table cla=
+ss=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-=
+rspace:0;word-break:break-word"><tbody><tr><td class=3D"pad" style=3D"paddi=
+ng-bottom:10px;padding-left:10px;padding-right:10px;padding-top:5px"><div s=
+tyle=3D"font-family:sans-serif"><div class=3D"" style=3D"font-size:12px;fon=
+t-family:Arial,&#39;Helvetica Neue&#39;,Helvetica,sans-serif;mso-line-heigh=
+t-alt:14.399999999999999px;color:#fff;line-height:1.2"><p style=3D"margin:0=
+;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999px"=
+><span style=3D"word-break: break-word; font-size: 22px;">You have won:</sp=
+an></p></div></div></td></tr></tbody></table><table class=3D"text_block blo=
+ck-3" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break=
+:break-word"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:10px;padd=
+ing-left:10px;padding-right:10px;padding-top:5px"><div style=3D"font-family=
+:sans-serif"><div class=3D"" style=3D"font-size:12px;font-family:Arial,&#39=
+;Helvetica Neue&#39;,Helvetica,sans-serif;mso-line-height-alt:14.3999999999=
+99999px;color:#fff;line-height:1.2"><p style=3D"margin:0;font-size:12px;tex=
+t-align:center;mso-line-height-alt:14.399999999999999px"><span style=3D"wor=
+d-break: break-word; font-size: 22px;">Clutch Pro USB C for Android and iPh=
+one 15 plus</span></p></div></div></td></tr></tbody></table></td><td class=
+=3D"column column-2" width=3D"41.666666666666664%" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;p=
+adding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom=
+:0;border-left:0"><table class=3D"image_block block-1" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pad" style=
+=3D"width:100%;padding-right:0;padding-left:0"><div class=3D"alignment" ali=
+gn=3D"center" style=3D"line-height:10px"><div style=3D"max-width:227px"><im=
+g src=3D"https://userimg-assets.customeriomail.com/images/client-env-92874/=
+1735814482256_glitch-pop-up.275a190c592b012df408ac578d47cb9e_01JGK9P2GQPM30=
+VNPDE1ND89XE.png" style=3D"display:block;height:auto;border:0;width:100%" w=
+idth=3D"227" alt=3D"" title=3D"" height=3D"auto"/></div></div></td></tr></t=
+body></table></td></tr></tbody></table></td></tr></tbody></table><table cla=
+ss=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;background-color:#eee"><tbody><tr><td><table class=3D"ro=
+w-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0;background-color:#141c2b;border-radius:0;color:#000;width:680px;margin:0 =
+auto" width=3D"680"><tbody><tr><td class=3D"column column-1" width=3D"100%"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:=
+left;padding-bottom:5px;vertical-align:top;border-top:0;border-right:0;bord=
+er-bottom:0;border-left:0"><table class=3D"text_block block-1" width=3D"100=
+%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tbody=
+><tr><td class=3D"pad" style=3D"padding-bottom:10px;padding-left:35px;paddi=
+ng-right:35px;padding-top:15px"><div style=3D"font-family:sans-serif"><div =
+class=3D"" style=3D"font-size:12px;font-family:Arial,&#39;Helvetica Neue&#3=
+9;,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#fff=
+;line-height:1.2"><p style=3D"margin:0;font-size:12px;text-align:center;mso=
+-line-height-alt:14.399999999999999px">
+<span style=3D"word-break: break-word; font-size: 18px;">In the next couple=
+ of days, you&#39;ll receive an email from Goody (our prize provider) to ar=
+range shipping of your prize. In the meantime, you may wish to check out th=
+e prize terms &amp; conditions below!</span></p></div></div></td></tr></tbo=
+dy></table><table class=3D"button_block block-2" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0"><tbody><tr><td class=3D"pad" style=3D"padd=
+ing-bottom:15px;padding-top:25px;text-align:center"><div class=3D"alignment=
+" align=3D"center"><!--[if mso]>
+<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schem=
+as-microsoft-com:office:word" href=3D"https://e.customeriomail.com/e/c/eyJl=
+bWFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmV=
+mIjoiaHR0cHM6Ly9oZWxwLnRyeWhhY2ttZS5jb20vZW4vYXJ0aWNsZXMvODUzNzQ3Mi1hZHZlbn=
+Qtb2YtY3liZXItMjAyNC10ZXJtcy1hbmQtY29uZGl0aW9ucyIsImludGVybmFsIjoiY2FkNTA1M=
+mI5ODgyMDFhOWUwNGYiLCJsaW5rX2lkIjoxNjM5Mn0/28c513b3c02794b7b38a67080a71af57=
+2fbd60ee2ed772173d98bbbc14af3abb" style=3D"height:39px;width:238px;v-text-a=
+nchor:middle;" arcsize=3D"13%" strokeweight=3D"1.5pt" strokecolor=3D"#62c44=
+a" fillcolor=3D"#141c2b">
+<w:anchorlock/>
+<v:textbox inset=3D"0px,0px,0px,0px">
+<center dir=3D"false" style=3D"color:#ffffff;font-family:Arial, sans-serif;=
+font-size:17px">
+<![endif]-->
+<a class=3D"button" href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZC=
+I6ImRnVEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0c=
+HM6Ly9oZWxwLnRyeWhhY2ttZS5jb20vZW4vYXJ0aWNsZXMvODUzNzQ3Mi1hZHZlbnQtb2YtY3li=
+ZXItMjAyNC10ZXJtcy1hbmQtY29uZGl0aW9ucyIsImludGVybmFsIjoiY2FkNTA1MmI5ODgyMDF=
+hOWUwNGYiLCJsaW5rX2lkIjoxNjM5Mn0/28c513b3c02794b7b38a67080a71af572fbd60ee2e=
+d772173d98bbbc14af3abb" target=3D"_blank" style=3D"background-color:#141c2b=
+;border-bottom:2px solid #62c44a;border-left:2px solid #62c44a;border-radiu=
+s:5px;border-right:2px solid #62c44a;border-top:2px solid #62c44a;color:#ff=
+ffff;display:inline-block;font-family:Arial, &#39;Helvetica Neue&#39;, Helv=
+etica, sans-serif;font-size:17px;font-weight:700;mso-border-alt:none;paddin=
+g-bottom:5px;padding-top:5px;text-align:center;text-decoration:none;width:a=
+uto;word-break:keep-all;"><span style=3D"word-break: break-word; padding-le=
+ft: 37px; padding-right: 37px; font-size: 17px; display: inline-block; lett=
+er-spacing: normal;"><span style=3D"word-break: break-word; line-height: 25=
+=2E5px;">Terms &amp; Conditions</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]--></div></td></tr=
+></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table=
+ class=3D"row row-4" align=3D"center" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0;mso-table-rspace:0;background-color:#eee"><tbody><tr><td><table class=3D"=
+row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspac=
+e:0;background-color:#151c2b;color:#000;width:680px;margin:0 auto" width=3D=
+"680"><tbody><tr><td class=3D"column column-1" width=3D"100%" style=3D"mso-=
+table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;vertical-=
+align:top;border-top:0;border-right:0;border-bottom:0;border-left:0"><table=
+ class=3D"social_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-=
+table-rspace:0"><tbody><tr><td class=3D"pad" style=3D"padding-bottom:10px;p=
+adding-left:15px;padding-right:15px;padding-top:15px;text-align:center"><di=
+v class=3D"alignment" align=3D"center"><table class=3D"social-table" width=
+=3D"216px" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"present=
+ation" style=3D"mso-table-lspace:0;mso-table-rspace:0;display:inline-block"=
+><tbody><tr><td style=3D"padding:0 2px 0 2px"><a href=3D"https://e.customer=
+iomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sx=
+Tkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL1RyeS1IYWNrLU1lLTE=
+wMTA0MDQzMjE4MjM2OCIsImludGVybmFsIjoiY2FkNTA1MmI5ODgyMDFhOWUwNGYiLCJsaW5rX2=
+lkIjo4Njd9/c0f710c7962ea0ecd725e7940e6feebdcf05d25d48b96574fbdfa879132b7eaf=
+" target=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-outline-circle-white/facebook@2x.png" width=3D=
+"32" height=3D"auto" alt=3D"Facebook" title=3D"Facebook" style=3D"display:b=
+lock;height:auto;border:0"/></a></td><td style=3D"padding:0 2px 0 2px"><a h=
+ref=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q=
+2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly90d2l0dGVyLmNvbS=
+9SZWFsVHJ5SGFja01lIiwiaW50ZXJuYWwiOiJjYWQ1MDUyYjk4ODIwMWE5ZTA0ZiIsImxpbmtfa=
+WQiOjg4MH0/3ca000446fa2a87f4e5e985a8f97da5e468af9c762468c088b24978e60b44f53=
+" target=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/public/resources=
+/social-networks-icon-sets/t-outline-circle-white/twitter@2x.png" width=3D"=
+32" height=3D"auto" alt=3D"Twitter" title=3D"Twitter" style=3D"display:bloc=
+k;height:auto;border:0"/></a></td><td style=3D"padding:0 2px 0 2px"><a href=
+=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q2am=
+dUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly93d3cuaW5zdGFncmFtL=
+mNvbS9yZWFsdHJ5aGFja21lLyIsImludGVybmFsIjoiY2FkNTA1MmI5ODgyMDFhOWUwNGYiLCJs=
+aW5rX2lkIjo4NjZ9/c8116623b7fdea9ca80ee6946f1d70cb21ca97a446659053460828cb05=
+00a072" target=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/public/res=
+ources/social-networks-icon-sets/t-outline-circle-white/instagram@2x.png" w=
+idth=3D"32" height=3D"auto" alt=3D"Instagram" title=3D"Instagram" style=3D"=
+display:block;height:auto;border:0"/></a></td><td style=3D"padding:0 2px 0 =
+2px">
+<a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUt=
+uZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly93d3cubGlua2=
+VkaW4uY29tL2NvbXBhbnkvdHJ5aGFja21lLyIsImludGVybmFsIjoiY2FkNTA1MmI5ODgyMDFhO=
+WUwNGYiLCJsaW5rX2lkIjo0fQ/80a4f98fbbbb3ab2f019e7f9eb277035bad0027d53ce9de39=
+f194b0f046531a5" target=3D"_blank"><img src=3D"https://app-rsrc.getbee.io/p=
+ublic/resources/social-networks-icon-sets/t-outline-circle-white/linkedin@2=
+x.png" width=3D"32" height=3D"auto" alt=3D"LinkedIn" title=3D"LinkedIn" sty=
+le=3D"display:block;height:auto;border:0"/></a></td><td style=3D"padding:0 =
+2px 0 2px"><a href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRn=
+VEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly9=
+3d3cucGludGVyZXN0LmNvLnVrL1JlYWxUcnlIYWNrTWUvIiwiaW50ZXJuYWwiOiJjYWQ1MDUyYj=
+k4ODIwMWE5ZTA0ZiIsImxpbmtfaWQiOjg4MX0/4b29364e7831ce68edcebfc61d5615be0229d=
+e0a39b9fc53a1c8800443083fde" target=3D"_blank"><img src=3D"https://app-rsrc=
+=2Egetbee.io/public/resources/social-ne=
+tworks-icon-sets/t-outline-circle-whit=
+e/pinterest@2x.png" width=3D"32" height=3D"auto" alt=3D"Pinterest" title=3D=
+"Pinterest" style=3D"display:block;height:auto;border:0"/></a></td><td styl=
+e=3D"padding:0 2px 0 2px"><a href=3D"https://e.customeriomail.com/e/c/eyJlb=
+WFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVm=
+IjoiaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AdHJ5aGFja21lb2ZmaWNpYWwiLCJpbnRlcm5hbCI=
+6ImNhZDUwNTJiOTg4MjAxYTllMDRmIiwibGlua19pZCI6MTQyNn0/e70c3ca4edbef005910c41=
+6c9d1ff2fbac9cfcb4a716868b13a0c0bdb8c2e700" target=3D"_blank"><img src=3D"h=
+ttps://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/t-outl=
+ine-circle-white/tiktok@2x.png" width=3D"32" height=3D"auto" alt=3D"TikTok"=
+ title=3D"TikTok" style=3D"display:block;height:auto;border:0"/></a></td></=
+tr></tbody></table></div></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table><table class=3D"row row-5" align=3D"center" wid=
+th=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#ee=
+e"><tbody><tr><td><table class=3D"row-content stack" align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;background-color:#1c2538;color:#000;w=
+idth:680px;margin:0 auto" width=3D"680"><tbody><tr><td class=3D"column colu=
+mn-1" width=3D"100%" style=3D"mso-table-lspace:0;mso-table-rspace:0;font-we=
+ight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:=
+top;border-top:0;border-right:0;border-bottom:0;border-left:0"><table class=
+=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rs=
+pace:0"><tbody><tr><td class=3D"pad"><div style=3D"font-family:Arial,&#39;H=
+elvetica Neue&#39;,Helvetica,sans-serif;text-align:center" align=3D"center"=
+></div></td></tr></tbody></table><table class=3D"text_block block-2" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"=
+><tbody><tr><td class=3D"pad" style=3D"padding-left:15px;padding-right:15px=
+;padding-top:5px"><div style=3D"font-family:sans-serif"><div class=3D"" sty=
+le=3D"font-size:14px;font-family:Arial,&#39;Helvetica Neue&#39;,Helvetica,s=
+ans-serif;mso-line-height-alt:16.8px;color:#fff;line-height:1.2"><p style=
+=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px">
+<span style=3D"word-break: break-word; font-size: 12px; color: #ffffff;"><a=
+ href=3D"https://e.customeriomail.com/e/c/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUtuZ=
+1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenczdz0iLCJocmVmIjoiaHR0cHM6Ly90cnloYWNrbWUu=
+Y29tL3IvbGVnYWwvdGVybXMtb2YtdXNlIiwiaW50ZXJuYWwiOiJjYWQ1MDUyYjk4ODIwMWE5ZTA=
+0ZiIsImxpbmtfaWQiOjM5MTh9/bdd06d1f63eb7673cee2567900f7227530a45384bc8ef6ecc=
+d5de87ef7fe33be" target=3D"_blank" style=3D"text-decoration: underline; col=
+or: #ffffff;" rel=3D"noopener">Terms</a> | <a href=3D"https://e.customeriom=
+ail.com/unsubscribe/dgTK1QUDAKngT6jgTwGUPEyZiYwcGgK1NLazw3w=3D" target=3D"_=
+blank" rel=3D"noopener" style=3D"color:#ffffff;">Unsubscribe</a></span></p>=
+</div></div></td></tr></tbody></table><table class=3D"text_block block-3" w=
+idth=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-=
+word"><tbody><tr><td class=3D"pad"><div style=3D"font-family:sans-serif"><d=
+iv class=3D"" style=3D"font-size:12px;font-family:Arial,&#39;Helvetica Neue=
+&#39;,Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#=
+b63838;line-height:1.2"><p style=3D"margin:0;font-size:14px;text-align:cent=
+er;mso-line-height-alt:16.8px"><span style=3D"word-break: break-word; font-=
+size: 12px; color: #ffffff;">Copyright =C2=A9 TryHackMe. All rights reserve=
+d.</span></p></div></div></td></tr></tbody></table></td></tr></tbody></tabl=
+e></td></tr></tbody></table>
+</td></tr></tbody></table><!-- End --><img src=3D"https://e.customeriomail.=
+com/e/o/eyJlbWFpbF9pZCI6ImRnVEsxUVVEQUtuZ1Q2amdUd0dVUEV5WmlZd2NHZ0sxTkxhenc=
+zdz0ifQ=3D=3D" style=3D"height: 1px !important; max-height: 1px !important;=
+ max-width: 1px !important; width: 1px !important; display: none !important=
+;" alt=3D""/></body></html>
+--6800463ca341f566c1693dc33cf96c777801e129d0b79993559c669a54cd--
